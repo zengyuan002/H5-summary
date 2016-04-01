@@ -1,8 +1,6 @@
 # H5-summary
 H5移动端知识点总结
 
-移动开发基本知识点
-
 一. 使用rem作为单位
 ```
 html { font-size: 100px; }
@@ -95,24 +93,25 @@ body{font-family: "Helvetica Neue", Helvetica, sans-serif;}
 <a href="sms:10010">发短信给: 10010</a>
 ```
 七：调用手机系统自带的邮件功能
+```
 1. 当浏览者点击这个链接时，浏览器会自动调用默认的客户端电子邮件程序，并在收件人框中自动填上收件人的地址下面
-```
+
 <p><a href="mailto:tugenhua@126.com">发电子邮件</a></p>
-```
+
 2、填写抄送地址;
 
 在IOS手机下：在收件人地址后用?cc=开头;
 
 如下代码：
-```
+
 <p><a href="mailto:tugenhua@126.com?cc=879083421@qq.com">填写抄送地址</a></p>
-```
+
 在android手机下，如下代码：<p><a href="mailto:tugenhua@126.com?879083421@qq.com">填写抄送地址</a></p>
 
 3. 填上密件抄送地址，如下代码：
 
 在IOS手机下：紧跟着抄送地址之后，写上&bcc=，填上密件抄送地址
-```
+
 <a href="mailto:tugenhua@126.com?cc=879083421@qq.com&bcc=aa@qq.com">填上密件抄送地址</a>
 
 在安卓下;如下代码：
