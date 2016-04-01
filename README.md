@@ -4,29 +4,30 @@ H5移动端知识点总结
 移动开发基本知识点
 
 一. 使用rem作为单位
+```
 html { font-size: 100px; }
 @media(min-width: 320px) { html { font-size: 100px; } }
 @media(min-width: 360px) { html { font-size: 112.5px; } }
 @media(min-width: 400px) { html { font-size: 125px; } }
 @media(min-width: 640px) { html { font-size: 200px; } }
+```
 给手机设置100px的字体大小; 对于320px的手机匹配是100px，其他手机都是等比例匹配; 因此设计稿上是多少像素的话，那么转换为rem的时候，rem = 设计稿的像素/100 即可;
 
 二.  禁用a,button,input,optgroup,select,textarea 等标签背景变暗
 在移动端使用a标签做按钮的时候或者文字连接的时候，点击按钮会出现一个 "暗色的"背景，比如如下代码：
-
+```
 <a href="">button1</a>
-
 <input type="button" value="提交"/>
-
+```
 在移动端点击后 会出现"暗色"的背景，这时候我们需要在css加入如下代码即可：
-
+```
 a,button,input,optgroup,select,textarea{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-
+```
 三. meta基础知识点：
 1.页面窗口自动调整到设备宽度，并禁止用户及缩放页面。
-
+```
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" />
 
 属性基本含义：
@@ -80,33 +81,38 @@ user-scalable - 用户是否可以手动缩放
         这里开始内容
     </body>
 </html>
-
+```
 四：移动端如何定义字体font-family
+```
 body{font-family: "Helvetica Neue", Helvetica, sans-serif;}
-
+```
 五：在android或者IOS下 拨打电话代码如下：
+```
 <a href="tel:15602512356">打电话给:15602512356</a>
-
+```
 六：发短信(winphone系统无效)
+```
 <a href="sms:10010">发短信给: 10010</a>
-
+```
 七：调用手机系统自带的邮件功能
-1. 当浏览者点击这个链接时，浏览器会自动调用默认的客户端电子邮件程序，并在收件人框中自动填上收件人的地址下面<p><a href="mailto:tugenhua@126.com">发电子邮件</a></p>
-
+1. 当浏览者点击这个链接时，浏览器会自动调用默认的客户端电子邮件程序，并在收件人框中自动填上收件人的地址下面
+```
+<p><a href="mailto:tugenhua@126.com">发电子邮件</a></p>
+```
 2、填写抄送地址;
 
 在IOS手机下：在收件人地址后用?cc=开头;
 
 如下代码：
-
+```
 <p><a href="mailto:tugenhua@126.com?cc=879083421@qq.com">填写抄送地址</a></p>
-
+```
 在android手机下，如下代码：<p><a href="mailto:tugenhua@126.com?879083421@qq.com">填写抄送地址</a></p>
 
 3. 填上密件抄送地址，如下代码：
 
 在IOS手机下：紧跟着抄送地址之后，写上&bcc=，填上密件抄送地址
-
+```
 <a href="mailto:tugenhua@126.com?cc=879083421@qq.com&bcc=aa@qq.com">填上密件抄送地址</a>
 
 在安卓下;如下代码：
@@ -128,31 +134,34 @@ body{font-family: "Helvetica Neue", Helvetica, sans-serif;}
 7. 内容包含链接，含http(s)://等的文本自动转化为链接。如下代码：
 
 <p><a href="mailto:tugenhua@126.com?body=http://www.baidu.com">内容包含链接，含http(s)://等的文本自动转化为链接</a></p>
-
+```
 八：webkit表单输入框placeholder的颜色值改变：
 如果想要默认的颜色显示红色，代码如下：
-
+```
 input::-webkit-input-placeholder{color:red;}
 
 如果想要用户点击变为蓝色，代码如下：
 
 input:focus::-webkit-input-placeholder{color:blue;}
-
+```
 九：移动端IOS手机下清除输入框内阴影，代码如下
+```
 input,textarea {
 
 -webkit-appearance: none;
 
 }
-
+```
 十：在IOS中 禁止长按链接与图片弹出菜单
+```
 a, img {
 
 -webkit-touch-callout: none;
 
 }
-
+```
 回到顶部
+```
 
 calc基本用法
 
@@ -182,3 +191,4 @@ IE9+，FF4.0+，Chrome19+，Safari6+
     width:calc(100%-50px-2rem);
     height:10rem;
 }
+```
